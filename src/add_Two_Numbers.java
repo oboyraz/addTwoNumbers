@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class addTwoNumbers {
+public class add_Two_Numbers {
     /*
     You are given two non-empty linked lists representing two non-negative integers.
     The digits are stored in reverse order, and each of their nodes contains a single digit.
@@ -58,20 +58,20 @@ public class addTwoNumbers {
     private static void addTwoNumbers(LinkedList<Integer> l1, LinkedList<Integer> l2, LinkedList<Integer> l3, int maxSize) {
         int sendRight = 0;
         for (int i = 0; i < maxSize; i++) {
-            int geciciToplam = 0;
-            int ayniIndekseBas = 0;
+            int temporaryTotalValue = 0;
+            int sendSameIndex = 0;
 
-            geciciToplam = l1.get(i) + l2.get(i) + sendRight;
+            temporaryTotalValue = l1.get(i) + l2.get(i) + sendRight;
             sendRight-=sendRight;
-            if (geciciToplam>=10){
+            if (temporaryTotalValue>=10){
 
-                sendRight = geciciToplam / 10;
-                ayniIndekseBas = geciciToplam % 10;
-                l3.add(ayniIndekseBas);
+                sendRight = temporaryTotalValue / 10;
+                sendSameIndex = temporaryTotalValue % 10;
+                l3.add(sendSameIndex);
             }
             else {
-                ayniIndekseBas = geciciToplam;
-                l3.add(ayniIndekseBas);
+                sendSameIndex = temporaryTotalValue;
+                l3.add(sendSameIndex);
             }
 
         }
